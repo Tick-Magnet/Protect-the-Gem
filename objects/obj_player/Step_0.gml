@@ -32,6 +32,7 @@ if keyup {
 	if !instance_exists(obj_ring) {instance_create_layer(x,y,"GUI",obj_ring)}
 	obj_ring.image_index = ring;
 	obj_button.image_index = ring;
+	var _sound_index = audio_play_sound(snd_magic, 1, false);
 }
 
 if keyleft {
@@ -39,70 +40,73 @@ if keyleft {
 	if !instance_exists(obj_ring) {instance_create_layer(x,y,"GUI",obj_ring)}
 	obj_ring.image_index = ring;
 	obj_button.image_index = ring;
+	var _sound_index = audio_play_sound(snd_magic, 1, false);
 }
 if keydown {
 	ring = 2;	
 	if !instance_exists(obj_ring) {instance_create_layer(x,y,"GUI",obj_ring)}
 	obj_ring.image_index = ring;
 	obj_button.image_index = ring;
+	var _sound_index = audio_play_sound(snd_magic, 1, false);
 }
 if keyright {
 	ring = 3;	
 	if !instance_exists(obj_ring) {instance_create_layer(x,y,"GUI",obj_ring)}
 	obj_ring.image_index = ring;
 	obj_button.image_index = ring;
+	var _sound_index = audio_play_sound(snd_magic, 1, false);
 }
 
 
 
 
-if place_meeting(x,y,obj_yslime) and obj_button.image_index != 0 {
+if place_meeting(x,y,obj_yslime) and obj_button.image_index == 0 {
 	var col = instance_place(x, y, obj_yslime);
 	instance_destroy(col);
 	instance_destroy(obj_ring);
 	obj_button.image_index = 4;
-} else if place_meeting(x,y,obj_yslime) and obj_button.image_index == 0 {
-	instance_create_layer(x,y,"GUI",obj_gameover)
+	var _sound_index = audio_play_sound(snd_hit, 1, false);
+} else if place_meeting(x,y,obj_yslime) and obj_button.image_index != 0 {
 	instance_destroy(obj_ring);
-	instance_destroy(id);
+	var _sound_index = audio_play_sound(snd_miss, 1, false);
 }
 
 
-if place_meeting(x,y,obj_wslime) and obj_button.image_index != 1 {
+if place_meeting(x,y,obj_wslime) and obj_button.image_index == 1 {
 	var col = instance_place(x, y, obj_wslime);
 	instance_destroy(col);
 	instance_destroy(obj_ring);
 	obj_button.image_index = 4;
-} else if place_meeting(x,y,obj_wslime) and obj_button.image_index == 1 {
-	instance_create_layer(x,y,"GUI",obj_gameover)
+	var _sound_index = audio_play_sound(snd_hit, 1, false);
+} else if place_meeting(x,y,obj_wslime) and obj_button.image_index != 1 {
 	instance_destroy(obj_ring);
-	instance_destroy(id);
+	var _sound_index = audio_play_sound(snd_miss, 1, false);
 }
 
 
 
-if place_meeting(x,y,obj_bslime) and obj_button.image_index != 2 {
+if place_meeting(x,y,obj_bslime) and obj_button.image_index == 2 {
 	var col = instance_place(x, y, obj_bslime);
 	instance_destroy(col);
 	instance_destroy(obj_ring);
 	obj_button.image_index = 4;
-} else if place_meeting(x,y,obj_bslime) and obj_button.image_index == 2 {
-	instance_create_layer(x,y,"GUI",obj_gameover)
+	var _sound_index = audio_play_sound(snd_hit, 1, false);
+} else if place_meeting(x,y,obj_bslime) and obj_button.image_index != 2 {
 	instance_destroy(obj_ring);
-	instance_destroy(id);
+	var _sound_index = audio_play_sound(snd_miss, 1, false);
 }
 
 
 
-if place_meeting(x,y,obj_rslime) and obj_button.image_index != 3 {
+if place_meeting(x,y,obj_rslime) and obj_button.image_index == 3 {
 	var col = instance_place(x, y, obj_rslime);
 	instance_destroy(col);
 	instance_destroy(obj_ring);
 	obj_button.image_index = 4;
-} else if place_meeting(x,y,obj_rslime) and obj_button.image_index == 3 {
-	instance_create_layer(x,y,"GUI",obj_gameover)
+	var _sound_index = audio_play_sound(snd_hit, 1, false);
+} else if place_meeting(x,y,obj_rslime) and obj_button.image_index != 3 {
 	instance_destroy(obj_ring);
-	instance_destroy(id);
+	var _sound_index = audio_play_sound(snd_miss, 1, false);
 }
 
 

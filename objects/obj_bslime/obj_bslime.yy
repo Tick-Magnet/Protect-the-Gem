@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "slime",
+    "path": "folders/Objects/slime.yy",
   },
   "parentObjectId": {
     "name": "par_slime",

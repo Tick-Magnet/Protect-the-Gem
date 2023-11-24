@@ -6,6 +6,7 @@ image_index = hp;
 if place_meeting(x,y,par_slime) {
 	var col = instance_place(x, y, par_slime);
 	instance_destroy(col);
+	var _sound_index = audio_play_sound(snd_miss, 1, false);
 	hp += 1;
 }
 
